@@ -81,3 +81,78 @@ The prototype follows a layered architecture:
 If you have a monorepo:
 ```bash
 npm install
+```
+If you have separate frontend/backend folders:
+```bash
+# frontend
+cd client
+npm install
+
+# backend
+cd ../server
+npm install
+```
+### 3) Environment variables (backend)
+Create a .env file in your backend folder (example keys):
+```ini
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_for_dev_only
+PORT=5000
+```
+### 4) Run locally
+Backend:
+```bash
+npm run dev
+# or: npm start
+```
+Frontend:
+```bash
+npm start
+```
+Default ports referenced in the project report:
+React SPA: http://localhost:3000
+Express API: http://localhost:5000
+
+---
+
+## Routes & Pages (Prototype)
+
+Client routes used in the prototype:
+
+- `/` — swipe home
+- `/pet/:id`
+- `/shop/:id`
+- `/chat/:shopId`
+- `/login`
+
+---
+
+## API Notes (Prototype-Level)
+
+The report describes REST endpoints and patterns such as:
+
+- `POST /auth/register` — user registration flow
+- swipe logging via a `/swipes` endpoint pattern
+- CRUD-style routes for pets / users / matches / messages 
+
+### Authentication
+- JWT (HS256 in the prototype)
+- token expiry: 24 hours (prototype setting) 
+
+---
+
+## Engineering Notes (What I Learned / Implemented)
+
+- **Auth state propagation:** migrated from prop-drilling to **React Context (AuthContext)** so header/login state updates immediately without refresh. 
+- **Local dev CORS:** resolved cross-origin issues between SPA (3000) and API (5000) using Express CORS middleware.
+- **Data modeling:** implemented Mongoose schemas for core collections (User / Pet / Match / Message / BlogPost), including a compound uniqueness constraint for matches in the report’s design.
+
+---
+
+## Future Improvements (Planned)
+
+- WebSocket-based chat for true real-time messaging
+- Enhanced matching (machine learning-driven improvements proposed)
+- Admin panel for monitoring / verification / analytics
+
+---
