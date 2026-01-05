@@ -1,6 +1,6 @@
 # PetMatch — React Practice Project (Swipe-Based Pet Discovery)
 
-PetMatch is a **React single-page application (SPA)** prototype built as a practice project for a “pet matching” concept: users can **browse pets via a swipe-style UI**, apply filters, view pet/shop details, and access a **chat flow prepared for future real-time messaging**. The system uses a React frontend with a Node.js/Express REST API and MongoDB (via Mongoose) for persistence. :contentReference[oaicite:0]{index=0}
+PetMatch is a **React single-page application (SPA)** prototype built as a practice project for a “pet matching” concept: users can **browse pets via a swipe-style UI**, apply filters, view pet/shop details, and access a **chat flow prepared for future real-time messaging**. The system uses a React frontend with a Node.js/Express REST API and MongoDB (via Mongoose) for persistence.
 
 > Note: This is an **educational prototype**. It is not production-hardened or deployed by default.
 
@@ -8,7 +8,7 @@ PetMatch is a **React single-page application (SPA)** prototype built as a pract
 
 ## Demo
 
-- Demo video (prototype): https://youtu.be/rU8-W6YDKtk
+- Demo video (prototype): [https://youtu.be/rU8-W6YDKtk](https://youtu.be/R6RgSYZyfNM)
 
 ---
 
