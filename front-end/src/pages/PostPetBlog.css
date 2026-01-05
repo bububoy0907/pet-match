@@ -1,0 +1,148 @@
+.post-blog-container {
+    padding: 30px 20px 60px;
+    background: var(--color-3);
+    min-height: 100vh;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    color: var(--color-5);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .blog-preview {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .blog-preview-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+    color: var(--color-1);
+  }
+  
+  .media-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .media-slide {
+    min-width: 250px;
+    max-width: 250px;
+    height: 160px;
+    background: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+  
+  .media-slide img,
+  .media-slide iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .media-add {
+    background: #fafafa;
+    border: 2px dashed var(--color-2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px;
+    min-height: 200px; /* ⬅️ Increased height */
+    box-sizing: border-box;
+  }
+  
+  .media-add input[type="file"],
+  .media-add input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+  
+  .media-add label {
+    width: 90%;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 4px 0 2px;
+    text-align: left;
+  }
+  
+  .media-add button {
+    padding: 8px 16px;
+    background: var(--color-4);
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+  
+  .media-add button:hover {
+    background: var(--color-5);
+  }
+  
+  .pet-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .pet-info input,
+  .pet-info textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .publish-btn {
+    margin-top: 24px;
+    display: block;
+    padding: 10px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: var(--color-4);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .publish-btn:hover {
+    background: var(--color-5);
+  }
+  .pet-info label {
+    font-weight: bold;
+    margin-top: 14px;
+  }
+  .media-add label {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .pet-info select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    color: #333;
+  }

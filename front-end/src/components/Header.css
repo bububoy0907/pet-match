@@ -1,0 +1,59 @@
+/* Header.css */
+
+.header-bar {
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+    padding: 0 1rem;
+    position: relative;
+  }
+  
+  .header-bar .title {
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding-left: 1%;
+  }
+  
+  .menu-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  
+  .menu-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    background: var(--color-2);
+    padding: 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 9999;
+    padding-right: 1%;
+  }
+  
+  .menu-dropdown.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  
+  .menu-dropdown div {
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--color-5);
+  }
+  
+  .menu-dropdown div:hover {
+    background-color: var(--color-3);
+  }
+  

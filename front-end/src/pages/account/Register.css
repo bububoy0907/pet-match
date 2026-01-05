@@ -1,0 +1,136 @@
+:root {
+    --color-1: #324321;
+    --color-2: #a49f67;
+    --color-3: #e3d6c5;
+    --color-4: #cd8c0a;
+    --color-5: #8b4d14;
+    --white: #ffffff;
+  }
+  
+  .account-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--color-3);
+  }
+  
+  .register-page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-5);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Tabs + Box grouped */
+  .account-tabs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* File-label style tab buttons */
+  .account-tabs {
+    display: flex;
+    width: 100%;
+    max-width: 660px;
+    margin-bottom: -2px;
+    z-index: 2;
+    padding: 0;
+  }
+  
+  .tab-btn {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+    background-color: var(--color-2);
+    color: var(--color-1);
+    border: 2px solid var(--color-2);
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+  }
+  .business-btn {
+    margin-right: 0px; /* 🔧 Adjust this value until it looks visually aligned */
+  }
+  
+  .tab-btn.active {
+    background-color: var(--white);
+    color: var(--color-5);
+    z-index: 3;
+  }
+  
+  /* Account box styling */
+  .register-account-box {
+    width: 100%;
+    max-width: 660px;
+    padding: 2rem;
+    background-color: var(--white);
+    border: 2px solid var(--color-2);
+    border-radius: 0 0 12px 12px;
+    box-sizing: border-box;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    z-index: 1;
+  }
+  
+  .register-account-box form {
+    width: 100%;
+  }
+  
+  .register-account-box input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border: 1px solid var(--color-2);
+    border-radius: 8px;
+    margin-bottom: 1.25rem;
+    box-sizing: border-box;
+  }
+  
+  /* Labels and text */
+  .input-label {
+    font-weight: bold;
+    color: var(--color-5);
+    margin-bottom: 0.4rem;
+    font-size: 1.1rem;
+    display: block;
+  }
+  
+  .btn-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+  
+  .btn-group button {
+    padding: 0.6rem 1.5rem;
+    background-color: var(--color-4);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .register-link {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--color-1);
+  }
+  
+  .clickable-link {
+    color: var(--color-4);
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .clickable-link:hover {
+    text-decoration: underline;
+  }
+  

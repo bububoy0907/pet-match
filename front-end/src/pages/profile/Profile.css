@@ -1,0 +1,80 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: var(--color-3);
+  }
+  
+  .profile-box {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    text-align: left;
+  }
+  
+  .profile-box h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--color-1);
+  }
+  
+  .profile-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .label {
+    font-weight: bold;
+    color: var(--color-1);
+    flex: 1;
+  }
+  
+  .value {
+    flex: 2;
+    text-align: center;
+    color: var(--color-5);
+  }
+  
+  .logout-button {
+    width: 100%;
+    margin-top: 1.5rem;
+    background-color: var(--color-4);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .change-link {
+    font-size: 0.9rem;
+    color: var(--color-4);
+    text-decoration: underline;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .fixed-link {
+    width: 45px;
+    font-size: 0.9rem;
+    color: #f74343;
+    flex-shrink: 0;
+  }
+  
+  .return-button {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--color-2);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }

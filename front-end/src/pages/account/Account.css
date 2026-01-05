@@ -1,0 +1,215 @@
+:root {
+    --color-1: #324321;
+    --color-2: #a49f67;
+    --color-3: #e3d6c5;
+    --color-4: #cd8c0a;
+    --color-5: #8b4d14;
+    --white: #ffffff;
+    --overlay-white: rgba(255, 255, 255, 0.5);
+  }
+  
+  .account-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--color-3);
+  }
+  
+  .account-box {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .account-switch {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .account-switch button {
+    flex: 1;
+    background: var(--color-2);
+    color: var(--color-1);
+    border: none;
+    padding: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  
+  form input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-2);
+    font-size: 1rem;
+  }
+  
+  .btn-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn-group button {
+    flex: 1;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--color-4);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .login-title {
+    text-align: center;
+    font-size: 2rem; /* increased */
+    color: var(--color-4); /* highlighted orange */
+    margin-bottom: 2rem;
+  }
+
+  .input-label {
+    font-weight: bold;
+    color: var(--color-5);
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem; /* increased */
+    display: block;
+  }
+
+/* Widen input fields */
+.register-account-box input[type="email"],
+.register-account-box input[type="password"] {
+  width: 100%;
+  max-width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-2);
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  box-sizing: border-box;
+}
+
+.input-label {
+  font-weight: bold;
+  color: var(--color-5);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.register-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-1);
+}
+
+.clickable-link {
+  color: var(--color-4);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.clickable-link:hover {
+  text-decoration: underline;
+}
+
+.register-page-title {
+  color: var(--color-5);
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Container to group tabs + box together */
+.account-tabs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Tab buttons float just above account-box */
+.account-tabs {
+  display: flex;
+  margin-bottom: -2px; /* merge visually with account-box */
+  z-index: 2;
+}
+
+/* File-label style tabs */
+.tab-btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  background-color: var(--color-2);
+  color: var(--color-1);
+  border: 2px solid var(--color-2);
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+.tab-btn.active {
+  background-color: var(--white);
+  color: var(--color-5);
+  border: 2px solid var(--color-2);
+  border-bottom: none;
+  z-index: 3;
+}
+
+/* White box */
+.register-account-box {
+  width: 100%;
+  max-width: 650px;
+  padding: 2rem;
+  background-color: var(--white);
+  border: 2px solid var(--color-2);
+  border-radius: 0 0 12px 12px;
+  box-sizing: border-box;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1;
+}
+
+/* Input styling - all fixed width */
+.account-box input {
+  width: 100%;
+  max-width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-2);
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  box-sizing: border-box;
+}
+
+/* Subtitle labels */
+.input-label {
+  font-weight: bold;
+  color: var(--color-5);
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  display: block;
+}
+
+.register-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-1);
+}
+
+.clickable-link {
+  color: var(--color-4);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.clickable-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,378 @@
+/*
+  File: src/pages/home/Home.css
+
+  Key changes:
+    - .open class for menu-dropdown & filter-dropdown-content
+      adds fade+slide transitions for "expand/close" animation
+    - "Empty" item is just normal list item labeled (None)
+*/
+
+:root {
+  --color-1: #324321; /* dark green */
+  --color-2: #a49f67; /* lighter khaki/olive */
+  --color-3: #e3d6c5; /* pale beige */
+  --color-4: #cd8c0a; /* earthy orange */
+  --color-5: #8b4d14; /* brownish */
+  --white: #ffffff;
+  --overlay-white: rgba(255, 255, 255, 0.5);
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--color-3);
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.no-more-pets {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: var(--color-1);
+  font-weight: bold;
+}
+
+/* MENU DROPDOWN */
+.menu-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 1rem;
+  background: var(--color-2);
+  padding: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+
+  /* Start hidden (for animation) */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 9999;
+}
+
+.menu-dropdown.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.menu-dropdown div {
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--color-5);
+}
+
+.menu-dropdown div:hover {
+  background-color: var(--color-3);
+}
+
+/* FILTER ROW */
+.filter-row {
+  display: flex;
+  gap: 0.5rem;
+  overflow: visible;
+  padding: 1rem;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 1900px;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.filter-dropdown {
+  position: relative;
+  z-index: 10000;
+}
+
+.filter-btn {
+  background-color: var(--color-2);
+  color: var(--color-1);
+  border: none;
+  border-radius: 16px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  min-width: 90px;
+  text-align: center;
+  z-index: 9999;
+}
+
+.filter-btn:hover {
+  background-color: var(--color-4);
+  color: var(--white);
+}
+
+/* FILTER DROPDOWN CONTENT */
+.filter-dropdown-content {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background-color: var(--color-3);
+  border: 1px solid var(--color-2);
+  border-radius: 4px;
+  padding: 8px;
+  min-width: 120px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+  /* Expand/Close Animation */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-5px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 9999;
+}
+
+.filter-dropdown-content.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.filter-dropdown-content div {
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.filter-dropdown-content div:hover {
+  background-color: var(--color-2);
+  color: var(--white);
+}
+.filter-label {
+  color: var(--color-1); /* dark green - original */
+}
+
+.filter-value {
+  color: #f2c877; /* #cd8c0a - highlight */
+}
+
+.reset-btn {
+  background-color: var(--color-5); /* brownish */
+  color: var(--white);
+  border: none;
+  border-radius: 16px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  height: 38px;
+  align-self: center;
+}
+
+.reset-btn:hover {
+  background-color: var(--color-4); /* highlight orange */
+}
+/* CARD + BUTTONS */
+.card-and-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pet-card {
+  position: relative;
+  width: 700px; /* bigger card width */
+  height: 500px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  background-color: var(--color-3);
+  cursor: grab;
+  transition: transform 0.3s ease-out;
+}
+
+.pet-card:active {
+  cursor: grabbing;
+}
+
+/* Hover effect: scale up slightly */
+.pet-card:hover {
+  transform: scale(1.02);
+}
+
+.pet-card.dragging {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: none; /* no smooth transition while dragging */
+}
+
+/* Pet image background */
+.pet-card-bg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--white);
+}
+
+.pet-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* Fill the card but maintain ratio */
+  object-position: center;
+  display: block;
+}
+
+.pet-info-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: var(--overlay-white);
+  color: var(--color-1);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-sizing: border-box;
+}
+
+.pet-name {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--color-5);
+}
+
+.pet-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.4rem 1.2rem;
+  font-size: 1rem;
+}
+
+.pet-info-item {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 500;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.pet-info-item .label {
+  font-weight: bold;
+  color: var(--color-1);
+  white-space: nowrap;
+}
+
+.pet-info-item .highlight {
+  color: var(--color-4); /* earthy orange */
+  font-weight: bold;
+}
+
+/* LIKE / DISLIKE BUTTONS */
+.swipe-buttons-below {
+  margin-top: 12px;
+  display: flex;
+  gap: 1rem;
+}
+
+.swipe-btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.like-btn {
+  background-color: var(--color-4);
+  color: var(--white);
+}
+
+.dislike-btn {
+  background-color: var(--color-5);
+  color: var(--white);
+}
+
+.swipe-hover-box {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 140px; /* smaller width */
+  border: 2px dashed var(--color-4);
+  background-color: var(--overlay-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.swipe-hover-box.left {
+  left: calc(24% - 320px); /* adjust to sit just left of the card */
+}
+
+.swipe-hover-box.right {
+  right: calc(24% - 320px); /* adjust to sit just right of the card */
+}
+
+.hover-message {
+  color: var(--color-5);
+  font-size: 1rem;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.swipe-side-button {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 8;
+}
+
+.swipe-side-button.left {
+  left: calc(18% - 320px);
+}
+
+.swipe-side-button.right {
+  right: calc(18% - 320px);
+}
+
+.swipe-side-button button {
+  width: 180px;
+  height: 80px;
+  background-color: var(--color-3);
+  border: 2px dashed var(--color-2);
+  color: var(--color-1);
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.swipe-side-button button:hover {
+  background-color: var(--color-4);
+  color: var(--white);
+}
+.card-and-buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-select {
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+}
+
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+}

@@ -1,0 +1,183 @@
+/* src/pages/Home.css */
+
+/* 1) Define color palette variables */
+:root {
+  --color-1: #324321; /* dark green */
+  --color-2: #a49f67; /* lighter khaki/olive */
+  --color-3: #e3d6c5; /* pale beige */
+  --color-4: #cd8c0a; /* earthy orange */
+  --color-5: #8b4d14; /* brownish */
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--color-3);
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 2) HEADER */
+.header-bar {
+  width: 100%;
+  height: 60px;
+  background-color: var(--color-1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.header-bar .title {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 1rem;
+  background: var(--color-2);
+  padding: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-dropdown div {
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--color-5);
+}
+
+.menu-dropdown div:hover {
+  background-color: var(--color-3);
+}
+
+/* 3) FILTER ROW */
+.filter-row {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem;
+  margin-top: 10px;
+}
+
+.filter-btn {
+  background-color: var(--color-2);
+  color: var(--color-1);
+  border: none;
+  border-radius: 16px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filter-btn:hover {
+  background-color: var(--color-4);
+  color: white;
+}
+
+/* 4) PET CARD */
+.pet-card {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  height: 500px;
+  margin-top: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  /* We'll animate this container */
+}
+
+/* Card background image wrapper */
+.pet-card-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* White overlay at bottom 50% opacity */
+.pet-info-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.pet-info-overlay h2 {
+  margin: 0 0 0.5rem 0;
+}
+
+/* 5) SWIPE BUTTONS */
+.swipe-buttons {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.swipe-btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.like-btn {
+  background-color: var(--color-4);
+  color: white;
+}
+
+.dislike-btn {
+  background-color: var(--color-5);
+  color: white;
+}
+
+/* 6) ANIMATIONS */
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.95); }
+}
+
+.no-more-pets {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: var(--color-1);
+  font-weight: bold;
+}
