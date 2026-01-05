@@ -32,7 +32,7 @@ PetMatch is a **React single-page application (SPA)** prototype built as a pract
 ---
 ## Screenshots
 
-- 
+![title screen](https://github.com/bububoy0907/pet-match/blob/main/media/main_page.png?raw=1)
 
 ---
 
